@@ -2,3 +2,5 @@ Functional Programming Tutorial
 We can import functions from java.util.function and also bifunctions.
 We can make a new function and assign it to an existing function in another class with same signature using :: operator on the class name.
 If the class name is MyClass we can assign it to the newly created function like 
+Bifunction <Integer, Integer, Integer> add =  Myclass::addMethod ;
+and you can call it by => add.apply(3,4);
