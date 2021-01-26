@@ -4,3 +4,5 @@ We can make a new function and assign it to an existing function in another clas
 If the class name is MyClass we can assign it to the newly created function like 
 Bifunction <Integer, Integer, Integer> add =  Myclass::addMethod ;
 and you can call it by => add.apply(3,4);
+
+This steps here allows us to define the definition of a function at run time using lamda expression.
