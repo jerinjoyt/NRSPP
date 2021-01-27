@@ -1,8 +1,11 @@
+import java.util.Scanner;
 import java.util.function.BiFunction;
 
 public class Passing_FunctionAsArgument {
 	protected static class Math
+	
 	{
+		static Scanner input = new Scanner (System.in);
 		public static Integer add (Integer x, Integer y)
 		{
 			return x +y;
@@ -13,8 +16,12 @@ public class Passing_FunctionAsArgument {
 		}
 		public static Integer combine2n3 (BiFunction <Integer, Integer, Integer> combined)
 		{
+			System.out.println("Enter an integer ");
+			int x = input.nextInt();
 			
-			return combined.apply(2,3);
+			System.out.println("Enter an integer ");
+			int y = input.nextInt();
+			return combined.apply(x,y);
 		}
 		
 	}
