@@ -14,6 +14,9 @@ public class Passing_FunctionAsArgument {
 		{
 			return x -y;
 		}
+//		 what this function do is, it actually takes another function as argument 
+//		Only thing to make sure is they both should have the same syntax and return type
+//		here the name combined could be any name
 		public static Integer combine2n3 (BiFunction <Integer, Integer, Integer> combined)
 		{
 			System.out.println("Enter an integer ");
