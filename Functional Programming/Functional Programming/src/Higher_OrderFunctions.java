@@ -10,6 +10,7 @@ public class Higher_OrderFunctions {
 //		 This function takes a bifunction and returns another bifunction
 		Function <BiFunction <Float, Float, Float>, BiFunction <Float, Float, Float>> SecondArgIsZero =
 				(func) -> (x,y) ->  // here func is the bifunction taken and x and y are its parameters
+				
 		{
 			if (y==0)
 			{

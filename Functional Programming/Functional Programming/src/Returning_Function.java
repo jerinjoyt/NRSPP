@@ -50,6 +50,11 @@ protected static class Math
 		Function <Integer, Integer> timesFour = Math.createMultiplier(4);
 		System.out.println(thrice.apply(5));
 		System.out.println(timesFour.apply(5));
+		
+		
+		Function <Integer,Function <Integer, Integer>> Xm = (x) -> (y)-> x*y;
+		Function <Integer, Integer> fives = Xm.apply(5);
+		System.out.println(fives.apply(5));
 	}
 	
 	
