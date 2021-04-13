@@ -19,10 +19,11 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
     
           
     String n=request.getParameter("username");  
-    out.print("Welcome "+n);  
+    out.print("Welcome Admin"+n);  
 	out.println("<HTML>\n" + "<HEAD> </HEAD>\n" + "<BODY>\n" + "<H2> NRSPP Calculator </H2>\n" +
 
 			"<p> Hi, this is the first version of National Road Safety Partnership "+
+			"<h> We inted to display previous results saved in the database "+
 
 
 

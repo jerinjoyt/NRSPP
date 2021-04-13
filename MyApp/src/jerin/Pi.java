@@ -55,27 +55,27 @@ public class Pi extends HttpServlet {
 		int annualSales = Integer.parseInt(req.getParameter("1.3"));
 		int insCost = Integer.parseInt(req.getParameter("2.1"));
 		int incidents = Integer.parseInt(req.getParameter("2.2"));
-		try {
-			connect();
-			String queryString = "select * from music_album where id =?";
-			preparedStatement = connection.prepareStatement(queryString);
-			preparedStatement.setString(1, "a20");
-	        ResultSet rs = preparedStatement.executeQuery();
-	        if(rs.next())
-	    	System.out.println(name=rs.getString(2)); 
-	        disconnect();
-	            
-	        
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+////			connect();
+////			String queryString = "select * from music_album where id =?";
+////			preparedStatement = connection.prepareStatement(queryString);
+////			preparedStatement.setString(1, "a20");
+////	        ResultSet rs = preparedStatement.executeQuery();
+////	        if(rs.next())
+////	    	System.out.println(name=rs.getString(2)); 
+////	        disconnect();
+//	            
+//	        
+////		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+////			e.printStackTrace();
+//		}
 		
-//		int vehicles = Integer.parseInt(req.getParameter("numberVehicles"));
-//		int distance = Integer.parseInt(req.getParameter("distTravelled"));
-//		int fleetInsPreAnnual = Integer.parseInt(req.getParameter("annualPremiumFleet"));
-//		int premiumPerVe = Integer.parseInt(req.getParameter("premiumPerVehicle"));
-//		int excessPC = Integer.parseInt(req.getParameter("excessPC"));
+		int vehicles = Integer.parseInt(req.getParameter("2.3"));
+		int distance = Integer.parseInt(req.getParameter("2.4"));
+		int fleetInsPreAnnual = Integer.parseInt(req.getParameter("2.5"));
+		int premiumPerVe = fleetInsPreAnnual/vehicles;
+		int excessPC = Integer.parseInt(req.getParameter("2.7"));
 
 //		int i = Integer.parseInt(req.getParameter("annualSales"));
 
@@ -95,16 +95,16 @@ public class Pi extends HttpServlet {
 
 
 				"</BODY>\n" + "</HTML>");
-		out.println("The sector you are in "+sector +" </br>");
-		out.println("And your main revenue earner is "+revE);
-		out.println("The annual sale you entered "+annualSales);
-		out.println("The total insurers cost is "+ insCost);
-		out.println("The total incidents "+ incidents);
-//		out.println("The total vehicles "+ vehicles);
-//		out.println("The total distance covered  "+ distance);
-//		out.println("The Fleets Annual insurance premium  "+ fleetInsPreAnnual);
-//		out.println("The premium per vehicle "+ premiumPerVe);
-//		out.println("The excess amount per claim "+ excessPC);
+		out.println("\nThe sector you are in "+sector +" </br>");
+		out.println("\nAnd your main revenue earner is "+revE);
+		out.println("\nThe annual sale you entered "+annualSales);
+		out.println("\nThe total insurers cost is "+ insCost);
+		out.println("\nThe total incidents "+ incidents);
+		out.println("\nThe total vehicles "+ vehicles);
+		out.println("\nThe total distance covered  "+ distance);
+		out.println("\nThe Fleets Annual insurance premium  "+ fleetInsPreAnnual);
+		out.println("\nThe premium per vehicle "+ premiumPerVe);
+		out.println("\nThe excess amount per claim "+ excessPC);
 		
 		 
 		System.out.println("We got the number you entered " + "annualSales");
