@@ -86,7 +86,7 @@ public class Pi extends HttpServlet {
 				+ " Program accident cost calculator. The style sheet is pretty basic and"
 				+ " a final version will be added later.		        </p>" + "The sector you are in " + sector
 				+ " </br>" + "Your chosen currency is " + currency + "</br>" + "And your main revenue earner is " + revE +" "+name
-				+ "</br>" +
+				+ "</br>" 
 //				"The annual sale you entered "+annualSales + "</br>" +
 //				"The total insurers cost is "+ insCost+ "</br>" +
 //				"The total incidents "+ incidents+ "</br>" +
@@ -94,7 +94,7 @@ public class Pi extends HttpServlet {
 //				"The total distance covered  "+ distance+
 
 
-				"</BODY>\n" + "</HTML>");
+				);
 		out.println("\nThe sector you are in "+sector +" </br>");
 		out.println("\nAnd your main revenue earner is "+revE);
 		out.println("\nThe annual sale you entered "+annualSales);
@@ -104,7 +104,7 @@ public class Pi extends HttpServlet {
 		out.println("\nThe total distance covered  "+ distance);
 		out.println("\nThe Fleets Annual insurance premium  "+ fleetInsPreAnnual);
 		out.println("\nThe premium per vehicle "+ premiumPerVe);
-		out.println("\nThe excess amount per claim "+ excessPC);
+		out.println("\nThe excess amount per claim "+ excessPC+"</BODY>\n" + "</HTML>");
 		
 		 
 		System.out.println("We got the number you entered " + "annualSales");
