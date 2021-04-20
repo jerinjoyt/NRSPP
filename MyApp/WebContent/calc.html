@@ -38,8 +38,10 @@
           <select name="currency" id="curr">
             <option value="$AUD">$ Aud</option>
             <option value="$US">$ USD</option>
-            <option value="Euro">Euro</option>
-            <option value="Rupee">Rupee</option>
+            <option value="Euro">&#8364; Euro</option>
+            <option value="Rupee">&#8377; Rupee</option>
+            <option value="Pound">&#163; Pound</option>
+            <option value="yen">&#165; Yen</option>
           </select>
         </p>
         <br />
@@ -342,7 +344,7 @@
           var curr = document.getElementById("curr").value;
           document.getElementById("return").innerHTML =
             "Return on " + reve + " in %";
-          document.getElementById("profits").innerHTML += " " + reve;
+          document.getElementById("profits").innerHTML = "Profits from " + reve;
           document
             .getElementsByName("2.1")[0]
             .setAttribute("placeholder", "Enter the amount in " + curr);
