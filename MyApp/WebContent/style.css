@@ -1,0 +1,32 @@
+nav ul a{
+    color: #444444;
+}
+nav{
+    float: right;
+}
+.logo{
+    height: 92px;
+}
+.row{
+    padding-top: 10px;
+}
+footer{
+background-color: #cccccc;
+margin-top: 50px;
+padding: 20px 30px 20px 30px;
+}
+.l-item:hover{
+    background-color:#aadd00 ;
+  }
+  .l-item:hover a{
+    color:#fff;
+    text-decoration: none;
+  }
+  .menu{
+    display: flex;
+    flex-direction: row;
+  }
+  .l-item{
+    padding: 10px;
+    margin-right: 10px;
+  }

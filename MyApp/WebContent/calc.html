@@ -1,450 +1,748 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
     <link rel="stylesheet" href="cal.css" />
-    <title>NRSPP Calculator</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
   </head>
   <body>
-    <main>
-      <header>
-        <h1 id="intro">NRSPP Calculator</h1>
-        <p id="introp">
-          Hi, this is the first version of National Road Safety Partnership
-          Program accident cost calculator. The style sheet is pretty basic and
-          a final version will be added later.
-        </p>
-      </header>
-    </main>
-
-    <form id="regForm" action="page2">
-      <!-- One "tab" for each step in the form: -->
-      <div class="tab">
-        Welcome
-        <p>
-          <label for="sector">Your Sector:</label>
-          <br />
-          <select name="sector" id="sector">
-            <option value="Food Manufacturing">Food manufacturing</option>
-            <option value="Public Transport">Public Transport</option>
-            <option value="Other Transport">Other Transport</option>
-            <option value="Other">Other</option>
-          </select>
-        </p>
-        <br />
-        <p>
-          <label for="currency">Please Choose the currency:</label>
-          <br />
-          <select name="currency" id="curr">
-            <option value="$AUD">$ Aud</option>
-            <option value="$US">$ USD</option>
-            <option value="Euro">&#8364; Euro</option>
-            <option value="Rupee">&#8377; Rupee</option>
-            <option value="Pound">&#163; Pound</option>
-            <option value="yen">&#165; Yen</option>
-          </select>
-        </p>
-        <br />
-        What is your main revenue earner:
-        <p>
-          <input
-            placeholder="revenue earner..."
-            oninput="this.className = ''"
-            name="1.2"
-          />
-        </p>
-      </div>
-      <div class="tab">
-        <a id="top"> Data Entry</a>
-
-        <p>
-          Annual unit sales of ?<br />
-          <input oninput="this.className = ''" name="1.3" />
-        </p>
-        <p>
-          Annual claims data-cost of incident (insurer's costs)<br />
-          <input oninput="this.className = ''" name="2.1" />
-        </p>
-        <p>
-          Annual claims data-number of incidents <br />
-          <input oninput="this.className = ''" name="2.2" />
-        </p>
-        <p>
-          Total number of Vehicles<br />
-          <input oninput="this.className = ''" name="2.3" id="2.31" />
-        </p>
-        <p>
-          Annual total distance travelled by fleet (kms)<br />
-          <input oninput="this.className = ''" name="2.4" />
-        </p>
-        <p>
-          Annual fleet insurance Premium<br />
-          <input oninput="this.className = ''" name="2.5" id="2.51" />
-        </p>
-        <p>
-          Premium per vehicle<br />
-          <input oninput="this.className = ''" name="2.6" />
-        </p>
-        <p>
-          Excess per claim <br />
-          <input oninput="this.className = ''" name="2.7" />
-        </p>
-        <p id="return">Return on</p>
-        <p>
-          <input oninput="this.className = ''" name="2.8" />
-        </p>
-        <p>
-          Gross Annual turnover<br />
-          <input oninput="this.className = ''" name="2.9" />
-        </p>
-        <p id="profits">Profits from</p>
-        <p>
-          <input oninput="this.className = ''" name="2.10" />
-        </p>
-        <p>
-          Average unit costs of <br />
-          <input oninput="this.className = ''" name="2.11" />
-        </p>
-        <p>
-          Grey fleet<br />
-          <input oninput="this.className = ''" name="2.12" />
-        </p>
-        <p>
-          Estimated average annual business fleet travel (kms) of employees
-          using their own vehicle (if you are liable for grey fleet)<br />
-          <input oninput="this.className = ''" name="2.13" />
-        </p>
-      </div>
-      <div class="tab">
-        <a id="top"> NRSPP Calcualtion</a>
-        <p>
-          Overall Claim Rate per 100,000 Kilometres<br />
-          <input oninput="this.className = ''" name="3.1" />
-        </p>
-        <p>
-          Kilometres travelled per claim for combined fleet<br />
-          <input oninput="this.className = ''" name="3.2" />
-        </p>
-        <p>
-          Overall Claim Rate per Vehicle<br />
-          <input oninput="this.className = ''" name="3.3" />
-        </p>
-        <a id="division">Direct Cost <font-s>16</font-s></a>
-        <p>
-          Cost<br />
-          <input oninput="this.className = ''" name="3.4" />
-        </p>
-        <p>
-          As percentage of Gross Turnover<br />
-          <input oninput="this.className = ''" name="3.5" />
-        </p>
-        <p>
-          As percentage of Net Profit<br />
-          <input oninput="this.className = ''" name="3.6" />
-        </p>
-        <a id="division">indirect Cost <font-s>16</font-s></a>
-        <p>
-          Cost<br />
-          <input oninput="this.className = ''" name="3.7" />
-        </p>
-        <p>
-          As percentage of Gross Turnover<br />
-          <input oninput="this.className = ''" name="3.8" />
-        </p>
-        <p>
-          As percentage of Net Profit<br />
-          <input oninput="this.className = ''" name="3.9" />
-        </p>
-        <a id="division"
-          >Estimated Total Costs - Managed Fleet Only <font-s>16</font-s></a
-        >
-        <p>
-          Cost<br />
-          <input oninput="this.className = ''" name="3.10" />
-        </p>
-        <p>
-          As percentage of Gross Turnover<br />
-          <input oninput="this.className = ''" name="3.11" />
-        </p>
-        <p>
-          As percentage of Net Profit<br />
-          <input oninput="this.className = ''" name="3.12" />
-        </p>
-        <a id="division"
-          >Estimated Total Costs - All Vehicles<font-s>16</font-s></a
-        >
-        <p>
-          Cost<br />
-          <input oninput="this.className = ''" name="3.13" />
-        </p>
-        <p>
-          As percentage of Gross Turnover<br />
-          <input oninput="this.className = ''" name="3.14" />
-        </p>
-        <p>
-          As percentage of Net Profit<br />
-          <input oninput="this.className = ''" name="3.15" />
-        </p>
-      </div>
-      <div class="tab">
-        Final Outcome <br />
-        Stage 4
-        <p>
-          Unit Revenue<br />
-          <input oninput="this.className = ''" name="4.1" />
-        </p>
-        <p>
-          Direct incident costs<br />
-          <input oninput="this.className = ''" name="3.41" />
-        </p>
-        <p>
-          Direct incident costs<br />
-          <input oninput="this.className = ''" name="3.42" />
-        </p>
-        <p>
-          indirect incident costs<br />
-          <input oninput="this.className = ''" name="3.71" />
-        </p>
-        <p>
-          indirect incident costs<br />
-          <input oninput="this.className = ''" name="3.72" />
-        </p>
-        <p>
-          Total incident costs managed fleet<br />
-          <input oninput="this.className = ''" name="3.101" />
-        </p>
-        <p>
-          Total incident costs managed fleet<br />
-          <input oninput="this.className = ''" name="3.102" />
-        </p>
-        <p>
-          Total incident costs - all vehicles ( managed + grey fleet )<br />
-          <input oninput="this.className = ''" name="3.131" />
-        </p>
-        <p>
-          Total incident costs - all vehicles ( managed + grey fleet )<br />
-          <input oninput="this.className = ''" name="3.132" />
-        </p>
-      </div>
-      <div style="overflow: auto">
-        <div style="float: right">
-          <button type="button" id="prevBtn" onclick="nextPrev(-1)">
-            Previous
-          </button>
-          <button
-            type="button"
-            id="calc"
-            style="display: none"
-            onclick="nextPrev(0)"
-          >
-            Calculate
-          </button>
-
-          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    <div class="container">
+      <div class="row" style="margin-top: 20px">
+        <div class="col-md-4">
+          <a href="index.html">
+            <img src="logo.svg" class="logo" alt="logo" />
+          </a>
+        </div>
+        <div class="col-md-8">
+          <nav>
+            <ul class="menu">
+              <li class="active l-item"><a href="#">Knowledge Center</a></li>
+              <li class="l-item"><a href="#">Packages</a></li>
+              <li class="l-item"><a href="#">Partners</a></li>
+              <li class="l-item"><a href="#">News</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
-      <!-- Circles which indicates the steps of the form: -->
-      <div style="text-align: center; margin-top: 40px">
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
+      <div class="row sub-header">
+        <div class="col-md-6">
+          <img src="logo2.png" alt="" style="height: 100px; width: 300px" />
+        </div>
+        <div class="col-md-6 search" style="padding-top: 40px">
+          <form class="example" action="action_page.php">
+            <input
+              type="text"
+              placeholder="Type to Search"
+              name="search"
+              style="border-radius: 30px; border: 1px #ccc"
+            />
+            <button type="submit" style="border-radius: 30px; border: 0px">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
-    </form>
+      <div class="row">
+        <div class="col-md-12">
+          <form
+            id="regForm"
+            action="page2"
+            class="mt-3"
+            style="margin-top: -10px"
+          >
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+              <div class="form-header">
+                <h2 class="heading-1 mb-3">Welcome</h2>
+              </div>
+              <hr />
+              <p>
+                <label for="sector">Your Sector:</label>
+                <br />
+                <select name="sector" class="form-control" id="sector">
+                  <option value="Food Manufacturing">Food manufacturing</option>
+                  <option value="Public Transport">Public Transport</option>
+                  <option value="Other Transport">Other Transport</option>
+                  <option value="Other">Other</option>
+                </select>
+              </p>
+              <br />
+              <p>
+                <label for="currency">Please Choose the currency:</label>
+                <br />
+                <select class="form-control" name="currency" id="curr">
+                  <option value="$AUD">$ Aud</option>
+                  <option value="$US">$ USD</option>
+                  <option value="Euro">&#8364; Euro</option>
+                  <option value="Rupee">&#8377; Rupee</option>
+                  <option value="Pound">&#163; Pound</option>
+                  <option value="yen">&#165; Yen</option>
+                </select>
+              </p>
+              <br />
+              What is your main revenue earner:
+              <p>
+                <input
+                  class="form-control"
+                  placeholder="revenue earner..."
+                  oninput="this.className = ''"
+                  name="1.2"
+                />
+              </p>
+            </div>
+            <div class="tab">
+              <div class="form-header">
+                <h2>Data Entry</h2>
+              </div>
+              <hr />
+              <p>
+                Annual unit sales of ?<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="1.3"
+                />
+              </p>
+              <p>
+                Annual claims data-cost of incident (insurer's costs)<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.1"
+                />
+              </p>
+              <p>
+                Annual claims data-number of incidents <br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.2"
+                />
+              </p>
+              <p>
+                Total number of Vehicles<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.3"
+                  id="2.31"
+                />
+              </p>
+              <p>
+                Annual total distance travelled by fleet (kms)<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.4"
+                />
+              </p>
+              <p>
+                Annual fleet insurance Premium<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.5"
+                  id="2.51"
+                />
+              </p>
+              <p>
+                Premium per vehicle<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.6"
+                />
+              </p>
+              <p>
+                Excess per claim <br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.7"
+                />
+              </p>
+              <p id="return">Return on<br /></p>
+              <p>
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.8"
+                />
+              </p>
+              <p>
+                Gross Annual turnover<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.9"
+                />
+              </p>
+              <p id="profits">Profits from<br /></p>
+              <p>
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.10"
+                />
+              </p>
+              <p>
+                Average unit costs of <br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.11"
+                />
+              </p>
+              <p>
+                Grey fleet<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.12"
+                />
+              </p>
+              <p>
+                Estimated average annual business fleet travel (kms) of
+                employees using their own vehicle (if you are liable for grey
+                fleet)<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="2.13"
+                />
+              </p>
+            </div>
+            <div class="tab">
+              <div class="form-header">
+                <h2>NRSP Calculation</h2>
+              </div>
+              <hr />
+              <p>
+                Overall Claim Rate per 100,000 Kilometres<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.1"
+                />
+              </p>
+              <p>
+                Kilometres travelled per claim for combined fleet<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.2"
+                />
+              </p>
+              <p>
+                Overall Claim Rate per Vehicle<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.3"
+                />
+              </p>
 
-    <script>
-      var currentTab = 0; // Current tab is set to be the first tab (0)
-      showTab(currentTab); // Display the current tab
+              <a id="division">Direct Cost <font-s>16</font-s></a>
+              <p>
+                Cost<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.4"
+                />
+              </p>
+              <p>
+                As percentage of Gross Turnover<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.5"
+                />
+              </p>
+              <p>
+                As percentage of Net Profit<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.6"
+                />
+              </p>
 
-      function showTab(n) {
-        // This function will display the specified tab of the form...
-        var x = document.getElementsByClassName("tab");
-        x[n].style.display = "block";
-        //... and fix the Previous/Next buttons:
-        if (n == 0) {
-          document.getElementById("prevBtn").style.display = "none";
-          // document.getElementById("calc").onClick =calculate(0);
-        } else {
-          document.getElementById("prevBtn").style.display = "inline";
-          // document.getElementById("calc").onClick =calculate(1);
-        }
-        if (n !== 1) {
-          // document.getElementById("calc").style.diaplay = "none";
-          console.log("disabling calc");
-        } else {
-          // document.getElementById("calc").style.display = "inline";
-        }
-        if (n == x.length - 1) {
-          document.getElementById("calc").style.diaplay = "none";
-          //document.getElementById("calc").innerHTML = "Save Result"
-          document.getElementById("nextBtn").innerHTML = "Submit";
-        } else {
-          document.getElementById("nextBtn").innerHTML = "Next";
-          // document.getElementById("calc").innerHTML = "Calculate";
-        }
-        //... and run a function that will display the correct step indicator:
-        fixStepIndicator(n);
-        // calculate(n);
-      }
+              <a id="division">indirect Cost <font-s>16</font-s></a>
+              <p>
+                Cost<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.7"
+                />
+              </p>
+              <p>
+                As percentage of Gross Turnover<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.8"
+                />
+              </p>
+              <p>
+                As percentage of Net Profit<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.9"
+                />
+              </p>
 
-      function nextPrev(n) {
-        // This function will figure out which tab to display
-        var x = document.getElementsByClassName("tab");
-        // Exit the function if any field in the current tab is invalid:
-        if (n == 1 && !validateForm()) return false;
+              <a id="division"
+                >Estimated Total Costs - Managed Fleet Only
+                <font-s>16</font-s></a
+              >
+              <p>
+                Cost<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.10"
+                />
+              </p>
+              <p>
+                As percentage of Gross Turnover<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.11"
+                />
+              </p>
+              <p>
+                As percentage of Net Profit<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.12"
+                />
+              </p>
 
-        // Hide the current tab:
-        x[currentTab].style.display = "none";
-        // Increase or decrease the current tab by 1:
-        currentTab = currentTab + n;
+              <a id="division"
+                >Estimated Total Costs - All Vehicles<font-s>16</font-s></a
+              >
+              <p>
+                Cost<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.13"
+                />
+              </p>
+              <p>
+                As percentage of Gross Turnover<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.14"
+                />
+              </p>
+              <p>
+                As percentage of Net Profit<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.15"
+                />
+              </p>
+            </div>
 
-        // if you have reached the end of the form...
-        if (currentTab >= x.length) {
-          // ... the form gets submitted:
-          document.getElementById("regForm").submit();
-          return false;
-        }
-        // Otherwise, display the correct tab:
+            <div class="tab">
+              <div class="form-header">
+                <h2>Final Outcome</h2>
+              </div>
+              <hr />
+              <p>
+                Unit Revenue<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="4.1"
+                />
+              </p>
+              <p>
+                Direct incident costs<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.41"
+                />
+              </p>
+              <p>
+                Direct incident costs<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.42"
+                />
+              </p>
+              <p>
+                indirect incident costs<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.71"
+                />
+              </p>
+              <p>
+                indirect incident costs<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.72"
+                />
+              </p>
+              <p>
+                Total incident costs managed fleet<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.101"
+                />
+              </p>
+              <p>
+                Total incident costs managed fleet<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.102"
+                />
+              </p>
+              <p>
+                Total incident costs - all vehicles ( managed + grey fleet )<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.131"
+                />
+              </p>
+              <p>
+                Total incident costs - all vehicles ( managed + grey fleet )<br />
+                <input
+                  class="form-control"
+                  oninput="this.className = ''"
+                  name="3.132"
+                />
+              </p>
+            </div>
+            <div style="overflow: auto">
+              <div
+                class="btn-group"
+                style="display: flex; justify-content: center"
+              >
+                <button
+                  class="btn btn-dark"
+                  style="background-color: #777; color: #fff"
+                  type="button"
+                  id="prevBtn"
+                  onclick="nextPrev(-1)"
+                >
+                  Previous
+                </button>
+                <button
+                  class="btn btn-info"
+                  type="button"
+                  id="nextBtn"
+                  style="float: right"
+                  onclick="nextPrev(1)"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+            <div id="printBtn" hidden>
+              <button
+                class="btn btn-primary"
+                type="button"
+                style="float: right"
+                onclick="window.print()"
+              >
+                Print
+              </button>
+              <button class="btn btn-info" type="button" style="float: right"
+              onClick="saveFile()">
+                Save
+              </button>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align: center; margin-top: 40px" hidden>
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="page-footer font-small blue">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-light">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
+            delectus est modi corporis consequatur fuga eligendi corrupti
+            reiciendis tenetur eius, illum qui quasi sapiente, quas ea excepturi
+            accusamus harum tempore. Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Similique fugiat, magnam molestiae ut assumenda
+            possimus nobis inventore sint cupiditate, commodi ullam accusamus
+            esse ipsa a iure quibusdam! Quo, maxime error.
+          </p>
+          © 2020 Copyright:
+          <a href="https://mdbootstrap.com/"> nrspp.org.au</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
 
-        showTab(currentTab);
-        console.log("Current tab from next prev " + currentTab);
-        //   calculate(currentTab);
-      }
-
-      function validateForm() {
-        // This function deals with validation of the form fields
-        var x,
-          y,
-          i,
-          valid = true;
-        x = document.getElementsByClassName("tab");
-        y = x[currentTab].getElementsByTagName("input");
-        // A loop that checks every input field in the current tab:
-        for (i = 0; i < y.length; i++) {
-          // If a field is empty...
-          if (y[i].value == "") {
-            // add an "invalid" class to the field:
-            y[i].className += " invalid";
-            // and set the current valid status to false
-            // valid = false;
-            valid = true;
-          }
-        }
-        // If the valid status is true, mark the step as finished and valid:
-        if (valid) {
-          document.getElementsByClassName("step")[currentTab].className +=
-            " finish";
-        }
-        return valid; // return the valid status
-      }
-
-      function calculate(n) {
-        if (n == 0) {
-          var reve = document.getElementsByName("1.2")[0].value;
-          var curr = document.getElementById("curr").value;
-          document.getElementById("return").innerHTML =
-            "Return on " + reve + " in %";
-          document.getElementById("profits").innerHTML = "Profits from " + reve;
-          document
-            .getElementsByName("2.1")[0]
-            .setAttribute("placeholder", "Enter the amount in " + curr);
-        } else if (n == 1) {
-          costOfIncident = parseInt(document.getElementsByName("2.1")[0].value);
-          incidents = parseInt(document.getElementsByName("2.2")[0].value);
-          vehicles = parseInt(document.getElementById("2.31").value);
-          totalDistance = parseInt(document.getElementsByName("2.4")[0].value);
-          annualInsurance = parseInt(
-            document.getElementsByName("2.5")[0].value
-          );
-          excessPerClaim = parseInt(document.getElementsByName("2.7")[0].value);
-          returnPercentage =
-            parseInt(document.getElementsByName("2.8")[0].value) / 100;
-          annualTurnOver = parseInt(document.getElementsByName("2.9")[0].value);
-          avgUnitCost = parseInt(document.getElementsByName("2.11")[0].value);
-          greyFleet = parseInt(document.getElementsByName("2.12")[0].value);
-          avgFleetTravel = parseInt(
-            document.getElementsByName("2.13")[0].value
-          );
-          perVehicle = annualInsurance / vehicles;
-          kmPerClaim = totalDistance / incidents;
-          profits = returnPercentage * annualTurnOver;
-          cost = vehicles * profits;
-          indirectCost = costOfIncident * 3;
-          totalCost = cost + indirectCost;
-          estimatedAvg = totalCost / incidents;
-          eocn = (greyFleet * avgFleetTravel) / kmPerClaim;
-          eocc = eocn * estimatedAvg;
-          reocc = eocc / returnPercentage;
-          estdTotal = totalCost + reocc;
-
-          console.log(typeof returnPercentage);
-          console.log(returnPercentage + " " + annualTurnOver);
-          if (Number.isNaN(perVehicle)) {
-            window.alert("plese enter an int value");
+        function showTab(n) {
+          // This function will display the specified tab of the form...
+          var x = document.getElementsByClassName("tab");
+          x[n].style.display = "block";
+          //... and fix the Previous/Next buttons:
+          if (n == 0) {
+            document.getElementById("prevBtn").style.display = "none";
           } else {
-            document.getElementsByName("2.6")[0].value = perVehicle;
-            document.getElementsByName("2.10")[0].value = profits;
-            document.getElementsByName("3.1")[0].value =
-              (incidents * 100000) / totalDistance;
-            document.getElementsByName("3.2")[0].value = kmPerClaim;
-            document.getElementsByName("3.3")[0].value =
-              (incidents / vehicles) * 100;
-            // direct costs
-            document.getElementsByName("3.4")[0].value = cost;
-            document.getElementsByName("3.5")[0].value =
-              (cost / annualTurnOver) * 100;
-            document.getElementsByName("3.6")[0].value = (cost / profits) * 100;
-            // indirect costs
-            document.getElementsByName("3.7")[0].value = indirectCost;
-            document.getElementsByName("3.8")[0].value =
-              (indirectCost / annualTurnOver) * 100;
-            document.getElementsByName("3.9")[0].value =
-              (indirectCost / profits) * 100;
-            // Estimated total costs - managed fleet only
-            document.getElementsByName("3.10")[0].value = totalCost;
-            document.getElementsByName("3.11")[0].value =
-              (totalCost / annualTurnOver) * 100;
-            document.getElementsByName("3.12")[0].value =
-              (totalCost / profits) * 100;
-            // Estimated total costs – all vehicles
-            document.getElementsByName("3.13")[0].value = estdTotal;
-            document.getElementsByName("3.14")[0].value =
-              (estdTotal / annualTurnOver) * 100;
-            document.getElementsByName("3.15")[0].value =
-              (estdTotal / profits) * 100;
-            // Page four
-            document.getElementsByName("4.1")[0].value =
-              returnPercentage * avgUnitCost;
-            document.getElementsByName("3.41")[0].value = cost;
-            document.getElementsByName("3.42")[0].value = cost;
-            document.getElementsByName("3.71")[0].value = indirectCost;
-            document.getElementsByName("3.72")[0].value = indirectCost;
-            document.getElementsByName("3.101")[0].value = totalCost;
-            document.getElementsByName("3.102")[0].value = totalCost;
-            document.getElementsByName("3.131")[0].value = estdTotal;
-            document.getElementsByName("3.132")[0].value = estdTotal;
-
-            window.alert("There " + perVehicle);
+            document.getElementById("prevBtn").style.display = "inline";
           }
-        } else if (n == 2) {
-          window.alert("Third page " + perVehicle);
+          if (n == x.length - 1) {
+            document.getElementById("nextBtn").innerHTML = "Submit";
+            document.getElementById("printBtn").removeAttribute("hidden");
+          } else {
+            document.getElementById("nextBtn").innerHTML = "Next";
+          }
+          //... and run a function that will display the correct step indicator:
+          fixStepIndicator(n);
         }
-      }
 
-      function fixStepIndicator(n) {
-        // This function removes the "active" class of all steps...
-        var i,
-          x = document.getElementsByClassName("step");
-        for (i = 0; i < x.length; i++) {
-          x[i].className = x[i].className.replace(" active", "");
+        function nextPrev(n) {
+          // This function will figure out which tab to display
+          var x = document.getElementsByClassName("tab");
+          // Exit the function if any field in the current tab is invalid:
+          // if (n == 1 && !validateForm()) return false;
+          // Hide the current tab:
+          x[currentTab].style.display = "none";
+          // Increase or decrease the current tab by 1:
+          currentTab = currentTab + n;
+          // if you have reached the end of the form...
+          if (currentTab >= x.length) {
+            // ... the form gets submitted:
+            document.getElementById("regForm").submit();
+            return false;
+          }
+          // Otherwise, display the correct tab:
+          showTab(currentTab);
         }
-        //... and adds the "active" class on the current step:
-        console.log(i + ", " + n);
-        if (n == 0) calculate(n);
-        else calculate(n - 1);
-        x[n].className += " active";
-      }
+
+        function validateForm() {
+          // This function deals with validation of the form fields
+          var x,
+            y,
+            i,
+            valid = true;
+          x = document.getElementsByClassName("tab");
+          y = x[currentTab].getElementsByTagName("input");
+          // A loop that checks every input field in the current tab:
+          for (i = 0; i < y.length; i++) {
+            // If a field is empty...
+            if (y[i].value == "") {
+              // add an "invalid" class to the field:
+              y[i].className += " invalid";
+              // and set the current valid status to false
+              // valid = false;
+              valid = true;
+            }
+          }
+          // If the valid status is true, mark the step as finished and valid:
+          if (valid) {
+            document.getElementsByClassName("step")[currentTab].className +=
+              " finish";
+          }
+          return valid; // return the valid status
+        }
+        // calculator function
+
+        function calculate(n) {
+          if (n == 0) {
+            var reve = document.getElementsByName("1.2")[0].value;
+            var curr = document.getElementById("curr").value;
+            document.getElementById("return").innerHTML =
+              "Return on " + reve + " in %";
+            document.getElementById("profits").innerHTML =
+              "Profits from " + reve;
+            document
+              .getElementsByName("2.1")[0]
+              .setAttribute("placeholder", "Enter the amount in " + curr);
+          } else if (n == 1) {
+            costOfIncident = parseInt(
+              document.getElementsByName("2.1")[0].value
+            );
+            incidents = parseInt(document.getElementsByName("2.2")[0].value);
+            vehicles = parseInt(document.getElementById("2.31").value);
+            totalDistance = parseInt(
+              document.getElementsByName("2.4")[0].value
+            );
+            annualInsurance = parseInt(
+              document.getElementsByName("2.5")[0].value
+            );
+            excessPerClaim = parseInt(
+              document.getElementsByName("2.7")[0].value
+            );
+            returnPercentage =
+              parseInt(document.getElementsByName("2.8")[0].value) / 100;
+            annualTurnOver = parseInt(
+              document.getElementsByName("2.9")[0].value
+            );
+            avgUnitCost = parseInt(document.getElementsByName("2.11")[0].value);
+            greyFleet = parseInt(document.getElementsByName("2.12")[0].value);
+            avgFleetTravel = parseInt(
+              document.getElementsByName("2.13")[0].value
+            );
+            perVehicle = annualInsurance / vehicles;
+            kmPerClaim = totalDistance / incidents;
+            profits = returnPercentage * annualTurnOver;
+            cost = vehicles * profits;
+            indirectCost = costOfIncident * 3;
+            totalCost = cost + indirectCost;
+            estimatedAvg = totalCost / incidents;
+            eocn = (greyFleet * avgFleetTravel) / kmPerClaim;
+            eocc = eocn * estimatedAvg;
+            reocc = eocc / returnPercentage;
+            estdTotal = totalCost + reocc;
+
+            console.log(typeof returnPercentage);
+            console.log(returnPercentage + " " + annualTurnOver);
+            if (Number.isNaN(perVehicle)) {
+              window.alert("plese enter an int value");
+            } else {
+              document.getElementsByName("2.6")[0].value = perVehicle;
+              document.getElementsByName("2.10")[0].value = profits;
+              document.getElementsByName("3.1")[0].value =
+                (incidents * 100000) / totalDistance;
+              document.getElementsByName("3.2")[0].value = kmPerClaim;
+              document.getElementsByName("3.3")[0].value =
+                (incidents / vehicles) * 100;
+              // direct costs
+              document.getElementsByName("3.4")[0].value = cost;
+              document.getElementsByName("3.5")[0].value =
+                (cost / annualTurnOver) * 100;
+              document.getElementsByName("3.6")[0].value =
+                (cost / profits) * 100;
+              // indirect costs
+              document.getElementsByName("3.7")[0].value = indirectCost;
+              document.getElementsByName("3.8")[0].value =
+                (indirectCost / annualTurnOver) * 100;
+              document.getElementsByName("3.9")[0].value =
+                (indirectCost / profits) * 100;
+              // Estimated total costs - managed fleet only
+              document.getElementsByName("3.10")[0].value = totalCost;
+              document.getElementsByName("3.11")[0].value =
+                (totalCost / annualTurnOver) * 100;
+              document.getElementsByName("3.12")[0].value =
+                (totalCost / profits) * 100;
+              // Estimated total costs – all vehicles
+              document.getElementsByName("3.13")[0].value = estdTotal;
+              document.getElementsByName("3.14")[0].value =
+                (estdTotal / annualTurnOver) * 100;
+              document.getElementsByName("3.15")[0].value =
+                (estdTotal / profits) * 100;
+              // Page four
+              document.getElementsByName("4.1")[0].value =
+                returnPercentage * avgUnitCost;
+              document.getElementsByName("3.41")[0].value = cost;
+              document.getElementsByName("3.42")[0].value = cost;
+              document.getElementsByName("3.71")[0].value = indirectCost;
+              document.getElementsByName("3.72")[0].value = indirectCost;
+              document.getElementsByName("3.101")[0].value = totalCost;
+              document.getElementsByName("3.102")[0].value = totalCost;
+              document.getElementsByName("3.131")[0].value = estdTotal;
+              document.getElementsByName("3.132")[0].value = estdTotal;
+
+              window.alert("There " + perVehicle);
+            }
+          } else if (n == 2) {
+            window.alert("Third page " + perVehicle);
+          }
+        }
+
+        function fixStepIndicator(n) {
+          // This function removes the "active" class of all steps...
+          var i,
+            x = document.getElementsByClassName("step");
+          for (i = 0; i < x.length; i++) {
+            x[i].className = x[i].className.replace(" active", "");
+          }
+          console.log(x + " " + n + " i " + i);
+          if (n == 0) calculate(n);
+          else calculate(n - 1);
+          //... and adds the "active" class on the current step:
+          x[n].className += " active";
+        }
+      </script>
+       <script>
+      let saveFile = () => {
+        // Get the data from each element on the form.
+        const name = document.getElementById("sector");
+        const dcst = document.getElementsByName("3.4")[0].value;
+        const idcst = document.getElementsByName("3.7")[0].value;
+        const cmf = document.getElementsByName("3.10")[0].value;
+        const caf = document.getElementsByName("3.13")[0].value;
+
+        // This variable stores all the data.
+        let data =
+          "Results" +
+          "\r Sector: " +
+          name.value +
+          " \r\n " +
+          "Direct Cost: " +
+          dcst +
+          " \r\n " +
+          "Indirect Cost : " +
+          idcst +
+          " \r\n " +
+          "Estimated Total Costs - Managed Fleet Only: " +
+          cmf +
+          " \r\n " +
+          "Estimated Total Costs - All Vehicles: " +
+          caf;
+
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: "text/plain" });
+        const sFileName = "formData.txt"; // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+          newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        } else {
+          newLink.href = window.URL.createObjectURL(textToBLOB);
+          newLink.style.display = "none";
+          document.body.appendChild(newLink);
+        }
+
+        newLink.click();
+      };
     </script>
-    <button onclick="window.print()">Print this page</button>
+      <!-- Footer -->
+    </div>
   </body>
 </html>

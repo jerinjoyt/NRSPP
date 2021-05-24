@@ -35,6 +35,7 @@ public class Pi extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+//		
 		System.out.println("Trying to connect..");
 
 		connection = DriverManager.getConnection(url, user, password);
@@ -51,18 +52,15 @@ public class Pi extends HttpServlet {
 		System.out.println("Disconnected");
 	} // disconnect
 
-	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		
-		
-		String sector = req.getParameter("sector");
-		int profit = Integer.parseInt(req.getParameter("2.10"));
-		int directCost = Integer.parseInt(req.getParameter("3.4"));
-		int indirectC = Integer.parseInt(req.getParameter("3.7"));
-		int mfCost = Integer.parseInt(req.getParameter("3.10"));
-		int avCost = Integer.parseInt(req.getParameter("3.13"));
-
-
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException 
+	{
 		try {
+			String sector = req.getParameter("sector");
+			int profit = Integer.parseInt(req.getParameter("2.10"));
+			int directCost = Integer.parseInt(req.getParameter("3.4"));
+			int indirectC = Integer.parseInt(req.getParameter("3.7"));
+			int mfCost = Integer.parseInt(req.getParameter("3.10"));
+			int avCost = Integer.parseInt(req.getParameter("3.13"));
 			connect();
 			System.out.println(sector+profit+" "+directCost+" "+indirectC+" "+mfCost);
 			String query = "insert into report values ('"+sector+"', "+profit+", "+directCost+", "+indirectC+", "
@@ -77,23 +75,22 @@ public class Pi extends HttpServlet {
 						+ " Program accident cost calculator. The style sheet is pretty basic and"
 						+ " a final version will be added later.		        </p>" + "The sector you are in " + sector
 						+ "</br>" 
-		);
-				
-				
+						);
 				out.println("<p> <B> Succesfully inserted the values into the database for future reference</B></p> </BODY>\n" + "</HTML>");
 			}
-			else
-			{
-				PrintWriter out = res.getWriter();
-				out.println("<HTML>\n" + "<HEAD> </HEAD>\n" + "<BODY>\n" + "<H2> NRSPP Calculator </H2>\n" );
-				out.println("<H2><B> An Error occured while trying to save your result to the database </B></H2> </BODY>\n" + "</HTML>");
-			}
-			
-					
-		} catch (SQLException e) 
+			} 
+		catch (Exception e) 
 		{
-			e.getMessage();
-			System.out.println(e.getSQLState()+" \n"+e.getMessage());
+			
+			System.out.println(" \n"+e.getMessage());
+
+			PrintWriter out = res.getWriter();
+			out.println("<HTML>\n" + "<HEAD> </HEAD>\n" + "<BODY>\n" + "<H2> NRSPP Calculator </H2>\n" );
+			out.println("<H2><B> An Error occured while trying to save your result to the database."
+					+ " Please check you have entered all the values </B></H2>"
+					+ "Cause: "+e.toString()
+					+ " </BODY>\n" + "</HTML>");
+		
 		}
 		
 		

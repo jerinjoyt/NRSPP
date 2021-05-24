@@ -1,3 +1,32 @@
+#Welcome {
+  size: 550px;
+}
+
+.btn-group button {
+  background-color: #4caf50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+
 h1 {
   padding: 100px;
   width: 100%;
@@ -34,59 +63,10 @@ input {
   font-family: Raleway;
   border: 1px solid #aaaaaa;
 }
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-}
 
-/* Style the submit button */
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
-.form-body{
-  background-color: #fafafa;
-}
-.search{
-  padding-bottom: 35px;
-}
-.search>form>input{
-  border: 0px;
-}
-.sub-header{
-  background-color: #ccc;
-  margin-top: 10px;
-  padding: 10px;
-}
-
-form.example button:hover {
-  background: #0b7dda;
-}
-
-/* Clear floats */
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
   background-color: #ffdddd;
-}
-.form-header{
- 
-  color: #333;
 }
 
 /* Hide all steps by default: */
@@ -114,6 +94,9 @@ input.invalid {
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #4caf50;
+}
+TABLE,TR,TH,TD {
+	border:1px solid blue;
 }
 
 /*--------------------------------------------------------------
@@ -200,9 +183,9 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  margin: 1;
+  padding: 1;
+  border: 1;
   font-size: 100%;
   font: inherit;
   vertical-align: bottom;
@@ -251,4 +234,13 @@ img {
 }
 
 /* //iOS resets */
+body,
+html {
+  -webkit-text-size-adjust: none;
 
+  input[type="text"],
+  textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+  }
+}

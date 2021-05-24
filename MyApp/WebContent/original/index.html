@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="in.css" />
+    <title>NRSPP Calculator</title>
+  </head>
+  <header id="Welcome" height="500" style="border: 1px solid">
+    <img src="logo.png" alt="Trulli" width="250" height="75" />
+    Welcome To NRSPP Cost Calculator
+  </header>
+
+  <div class="btn-group" style="width: 100%">
+    <button
+      style="width: 33.3%"
+      onclick="document.getElementById('id01').style.display='block'"
+      style="width: auto"
+    >
+      Admin
+    </button>
+    <button style="width: 33.3%" onClick="location.href= 'calc.html'">
+      User
+    </button>
+    <button style="width: 33.3%" onClick="location.href= 'login.html'">
+      Contributig User
+    </button>
+
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="login" method="post">
+        <!-- <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div> -->
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            name="username"
+            required
+          />
+
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="userpass"
+            required
+          />
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember" /> Remember
+            me
+          </label>
+        </div>
+
+        <div class="container" style="background-color: #f1f1f1">
+          <button
+            type="button"
+            onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn"
+          >
+            Cancel
+          </button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("id01");
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      var m3 = document.getElementById("cu");
+      window.onclick = function (event) {
+        if (event.target == m3) {
+          m3.style.display = "none";
+        }
+      };
+    </script>
+  </div>
+  <div>
+    <p>
+      The National Road Safety Partnership Program (NRSPP) Total Road Incident
+      Cost Calculator was designed to provide organisations with an estimate of
+      the direct and indirect costs associated with a road incident. The
+      calculator presents an estimate of total incident costs in simple terms,
+      underlining how much each incident could potentially cost an organisation
+      in terms of lost revenue or service provision. In so doing, it helps
+      organisations understand the cost of road incidents relative to
+      productivity, profitability and service delivery. The calculator will help
+      you articulate the additional production or service delivery needed to
+      recover the Total Cost of Risk.
+    </p>
+    <br />
+    <h2>Who Can Use The Calculator?</h2>
+    <br />
+    <p>
+      recognises the differences in operations and business structure across
+      different sectors. To this end, tailored solutions and calculations are
+      provided for the Manufacturing and Services sector, State and Local
+      Government sector, Health and Emergency Services and Other Community
+      Services and Not-for-Profit organisations.
+    </p>
+    <br />
+    <h2>How does it work?</h2>
+    <br />
+    <h3>The Calculator has three main parts</h3>
+    <br />
+    <h3>1. Input</h3>
+    <br />
+    <p>
+      The input section is where the user enters information on the
+      organisation, e.g. the type of sector, the main product manufactured or
+      main service delivered, number of road incidents a year, insurance
+      details, fleet size, annual mileage where applicable include any ‘grey
+      fleet’ exposure.<br />
+
+      What is sometimes confused by organisations is even a ‘grey’ fleet will
+      contribute to additional hidden, uninsured costs should it be involved in
+      a traffic incident. Please refer to Appendix A for templates to assist in
+      compiling the necessary data from a variety of sources in your
+      organisation.
+    </p>
+    <h3>2. Calculate</h3>
+    <br />
+    <p>
+      This information is then used to calculate the direct and indirect costs
+      as well as other key statistics. This can be used as the first step to
+      using the online calculator.<br />
+
+      From a privacy point of view, the information provided in this section is
+      not stored, instead, only the sector and output information are stored for
+      use in future industry benchmarking.<br />
+
+      The calculations include a number of key indicators about the frequency of
+      incidents involving your fleet, such as the overall claim rate which
+      indicates the number of incidents per 100 000 kilometres travelled, the
+      number of kilometres travelled before an incident occurs and the overall
+      claim rate per vehicle. These can be used for future industry
+      benchmarking, and assist with performance monitoring and setting future
+      targets that indicate risk improvement.
+    </p>
+    <h3>3. Output</h3>
+    <br />
+    <p>
+      The calculator then presents the overall financial findings which
+      indicates the severity of incidents. This includes a breakdown of the
+      total direct costs for the managed fleet (i.e. annual premiums and excess
+      paid), total indirect costs for the managed fleet (using a conservative
+      estimate of three times the damage bill covered by insurer) and the
+      overall costs which include any grey fleet exposure. These costs are then
+      related to the organisation’s revenue and a typical, indicative product in
+      the results section.<br />
+
+      What this is designed to show your senior executives is just how many
+      products need to be manufactured, or services provided, to cover the
+      additional costs of your fleet risk, over and above what your Insurer
+      provides.
+    </p>
+  </div>
+</html>
